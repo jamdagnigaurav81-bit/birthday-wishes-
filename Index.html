@@ -1,147 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavya Sharma 🎀</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fff0f6;color:#704357;overflow-x:hidden}
-button{border:0;cursor:pointer;font-family:inherit;font-weight:bold}
-.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px}
-#home{position:relative;overflow:hidden;background:#ffddea}
-.home-content{position:relative;z-index:2}
-.small{font-size:13px;letter-spacing:3px;opacity:.7;margin-bottom:15px}
-h1{color:#d65380;font-size:clamp(48px,13vw,78px);line-height:.95}
-.name{display:block;font-size:.55em;margin-top:12px}
-.subtitle{margin:22px 0 30px;font-size:17px}
-.main-btn{background:white;color:#d65380;padding:16px 30px;border-radius:50px;font-size:16px;box-shadow:0 10px 30px rgba(160,70,105,.18)}
-.decor{position:absolute;font-size:30px;animation:float 4s ease-in-out infinite}
-.d1{top:12%;left:10%}.d2{top:20%;right:10%;animation-delay:1s}.d3{bottom:18%;left:13%;animation-delay:2s}
-.d4{bottom:12%;right:13%;animation-delay:.5s}.d5{top:48%;left:5%;animation-delay:1.5s}.d6{top:50%;right:5%;animation-delay:2.5s}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-#journey{display:none;position:fixed;inset:0;z-index:10;background:#ffddea;text-align:center;overflow:hidden}
-.journey-title{margin-top:18vh;color:#c64e77;font-size:21px}
-.path{position:absolute;left:8%;right:8%;bottom:30%;height:5px;background:white;border-radius:10px}
-.panda{position:absolute;left:-100px;bottom:calc(30% - 35px);font-size:72px;animation:walk 4s linear forwards}
-.journey-text{position:absolute;bottom:17%;width:100%;opacity:.7}
+  <title>Bhavya Sharma 🎀</title>
 
-#countdown{display:none;position:fixed;inset:0;z-index:20;background:linear-gradient(145deg,#ffe9f1,#ffd1e2)}
-.count-box{width:min(440px,100%);text-align:center}
-.count-panda{font-size:65px;animation:bounce 1.5s infinite}
-.count-box h2{color:#d0527d;margin:15px 0 10px;font-size:28px}
-.count-box p{line-height:1.6;font-size:14px}
-.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:25px 0}
-.time{background:white;border-radius:17px;padding:14px 3px}
-.number{display:block;color:#c64e77;font-size:25px;font-weight:bold}
-.label{font-size:9px;opacity:.6}
-
-#site{display:none;background:#fff0f6;min-height:100vh}
-.hero{min-height:100vh;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.hero-panda{font-size:85px;animation:bounce 1.7s infinite}
-.hero h2{color:#d0527d;font-size:clamp(42px,12vw,72px);line-height:1;margin:20px 0}
-.hero h2 span{color:#b93f6c}
-.hero p{max-width:480px;line-height:1.7;font-size:17px}
-.badge{margin-top:25px;background:white;color:#c64e77;padding:12px 22px;border-radius:30px;font-weight:bold}
-.section{padding:70px 20px;text-align:center}
-.card{max-width:600px;margin:auto;background:white;padding:35px 25px;border-radius:30px;box-shadow:0 15px 40px rgba(160,70,105,.12)}
-.card h3,.section-title{color:#d0527d;font-size:28px;margin-bottom:20px}
-.card p{line-height:1.9}
-
-.photos{max-width:900px;margin:30px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.photo{background:white;padding:10px;border-radius:20px;box-shadow:0 8px 25px rgba(160,70,105,.08)}
-.photo img{width:100%;height:240px;object-fit:cover;border-radius:14px;display:block}
-.photo p{padding:12px 5px 5px}
-
-.cake{width:190px;height:150px;margin:45px auto 25px;position:relative}
-.cake-bottom,.cake-middle,.cake-top{position:absolute;left:50%;transform:translateX(-50%);border-radius:12px}
-.cake-bottom{width:190px;height:60px;bottom:0;background:#e889a8}
-.cake-middle{width:155px;height:50px;bottom:50px;background:#f3abc0}
-.cake-top{width:125px;height:42px;bottom:92px;background:#ffd0df}
-.candle{position:absolute;bottom:132px;width:11px;height:35px;background:white;z-index:2}
-.candle1{left:75px}.candle2{left:105px}
-.flame{position:absolute;top:-23px;left:-5px}
-.wish-btn{background:#d0527d;color:white;padding:13px 24px;border-radius:30px}
-#wish{margin-top:15px;color:#c64e77}
-
-.gift{font-size:100px;margin:25px 0;animation:giftFloat 2s infinite ease-in-out}
-.gift-btn{background:#d0527d;color:white;padding:16px 28px;border-radius:40px;font-size:16px}
-#letter{display:none;max-width:620px;margin:35px auto 0;background:white;padding:35px 25px;border-radius:30px;box-shadow:0 20px 50px rgba(160,70,105,.15);text-align:left;animation:reveal .7s ease}
-.letter-icon{text-align:center;font-size:60px}
-#letter h3{text-align:center;color:#d0527d;font-size:28px;margin:15px 0 25px}
-#letter p{line-height:1.9;font-size:16px}
-.signature{margin-top:25px;text-align:right;color:#c64e77;line-height:1.7}
-footer{padding:35px 20px;background:#ffd7e5;text-align:center;line-height:1.8}
-
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-17px)}}
-@keyframes walk{from{left:-100px}to{left:calc(100% - 90px)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes giftFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes reveal{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
-@media(max-width:600px){
-.photos{grid-template-columns:1fr;max-width:360px}
-.photo img{height:280px}
-.timer{gap:4px}
-.number{font-size:21px}
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<section id="home" class="screen">
-<div class="decor d1">🎀</div><div class="decor d2">🩷</div><div class="decor d3">✨</div>
-<div class="decor d4">🌸</div><div class="decor d5">💗</div><div class="decor d6">⭐</div>
-<div class="home-content">
-<div class="small">A LITTLE SURPRISE AWAITS...</div>
-<h1>Birthday<span class="name">Princess Bhavya 🎀</span></h1>
-<div class="subtitle">Something very special is waiting for you 🐼🩷</div>
-<button class="main-btn" onclick="startJourney()">VISIT FULL SITE ✨</button>
-</div>
-</section>
+  <!-- HOME -->
+  <section id="home" class="screen">
 
-<section id="journey">
-<div class="journey-title">🐼 Wait... the panda is taking you there! 🎀</div>
-<div class="path"></div><div class="panda">🐼</div>
-<div class="journey-text">Follow the little panda... ✨</div>
-</section>
+    <div class="decor d1">🎀</div>
+    <div class="decor d2">🩷</div>
+    <div class="decor d3">✨</div>
+    <div class="decor d4">🌸</div>
+    <div class="decor d5">💗</div>
+    <div class="decor d6">⭐</div>
 
-<section id="countdown" class="screen">
-<div class="count-box">
-<div class="count-panda">🐼🎀</div>
-<h2>Bhavya's Special Day Is Coming! 🎂</h2>
-<p>The birthday surprise unlocks on<br><b>15 August 2026 • 12:00 AM IST</b></p>
-<div class="timer">
-<div class="time"><span class="number" id="days">00</span><span class="label">DAYS</span></div>
-<div class="time"><span class="number" id="hours">00</span><span class="label">HOURS</span></div>
-<div class="time"><span class="number" id="minutes">00</span><span class="label">MINUTES</span></div>
-<div class="time"><span class="number" id="seconds">00</span><span class="label">SECONDS</span></div>
-</div>
-</div>
-</section>
+    <div class="home">
 
-<section id="site">
-<div class="hero">
-<div class="hero-panda">🐼🎀</div>
-<div class="small">WELCOME TO A VERY SPECIAL DAY ✨</div>
-<h2>Happy 2nd<br>Birthday <span>Bhavya!</span> 🎂</h2>
-<p>Two tiny years of smiles, giggles, mischief and endless happiness. 🩷</p>
-<div class="badge">🎀 15 AUGUST 2026 🎀</div>
-</div>
+      <div class="small">
+        A LITTLE SURPRISE AWAITS...
+      </div>
 
-<div class="section">
-<div class="card">
-<h3>For Our Little Princess 🩷</h3>
-<p>Dear Bhavya,<br><br>
-You may be only two years old, but you've already filled so many hearts with happiness.
-<br><br>Keep smiling, keep laughing, and keep being the adorable little Bhavya that everyone loves. 🥹🎀
-<br><br>Lots and lots of love,<br><b>Mama ❤️</b></p>
-</div>
-</div>
+      <h1>
+        Birthday
+        <span class="name">Princess Bhavya 🎀</span>
+      </h1>
 
-<div class="section">
-<div class="small">LITTLE MOMENTS, BIG MEMORIES</div>
-<h3 class="section-title">Bhavya's Memories 📸</h3>
-<div class="photos">
+      <div class="subtitle">
+        Something very special is waiting for you 🐼🩷
+      </div>
 
-<div class="photo">
-<img src="data:image/jpeg;base64,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
+      <button class="main-btn" onclick="startJourney()">
+        VISIT FULL SITE ✨
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PANDA JOURNEY -->
+  <section id="journey">
+
+    <div class="journey-title">
+      🐼 Wait... the panda is taking you there! 🎀
+    </div>
+
+    <div class="path"></div>
+
+    <div class="panda">
+      🐼
+    </div>
+
+    <div class="journey-text">
+      Follow the little panda... ✨
+    </div>
+
+  </section>
+
+
+  <!-- COUNTDOWN -->
+  <section id="countdown" class="screen">
+
+    <div class="count-box">
+
+      <div class="count-panda">
+        🐼🎀
+      </div>
+
+      <h2>
+        Bhavya's Special Day Is Coming! 🎂
+      </h2>
+
+      <p>
+        The birthday surprise unlocks on<br>
+        <b>15 August 2026 • 12:00 AM IST</b>
+      </p>
+
+      <div class="timer">
+
+        <div class="time">
+          <span class="number" id="days">00</span>
+          <span class="label">DAYS</span>
+        </div>
+
+        <div class="time">
+          <span class="number" id="hours">00</span>
+          <span class="label">HOURS</span>
+        </div>
+
+        <div class="time">
+          <span class="number" id="minutes">00</span>
+          <span class="label">MINUTES</span>
+        </div>
+
+        <div class="time">
+          <span class="number" id="seconds">00</span>
+          <span class="label">SECONDS</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN WEBSITE -->
+  <section id="site">
+
+    <!-- HERO -->
+    <div class="hero">
+
+      <div class="hero-panda">
+        🐼🎀
+      </div>
+
+      <div class="small">
+        WELCOME TO A VERY SPECIAL DAY ✨
+      </div>
+
+      <h2>
+        Happy 2nd<br>
+        Birthday <span>Bhavya!</span> 🎂
+      </h2>
+
+      <p>
+        Two tiny years of smiles, giggles, mischief
+        and endless happiness. 🩷
+      </p>
+
+      <div class="badge">
+        🎀 15 AUGUST 2026 🎀
+      </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+    <div class="section">
+
+      <div class="card">
+
+        <h3>
+          For Our Little Princess 🩷
+        </h3>
+
+        <p>
+          Dear Bhavya,<br><br>
+
+          You may be only two years old, but you've already
+          filled so many hearts with happiness.<br><br>
+
+          Keep smiling, keep laughing, and keep being the
+          adorable little Bhavya that everyone loves. 🥹🎀<br><br>
+
+          Lots and lots of love,<br>
+
+          <b>Mama ❤️</b>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PHOTOS -->
+    <div class="section">
+
+      <div class="small">
+        LITTLE MOMENTS, BIG MEMORIES
+      </div>
+
+      <h3 class="section-title">
+        Bhavya's Memories 📸
+      </h3>
+
+      <div class="photos">
+
+        <div class="photo">
+          <img src="photo1.jpg" alt="Bhavya smiling">
+          <p>Cutest little smile 🩷</p>
+        </div>
+
+        <div class="photo">
+          <img src="photo2.jpg" alt="Bhavya sunshine">
+          <p>Our little sunshine ☀️</p>
+        </div>
+
+        <div class="photo">
+          <img src="photo3.jpg" alt="Bhavya little moments">
+          <p>Little moments ✨</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CAKE -->
+    <div class="section">
+
+      <div class="small">
+        MAKE A WISH ✨
+      </div>
+
+      <h3 class="section-title">
+        Two Candles For Bhavya 🎂
+      </h3>
+
+      <div class="cake">
+
+        <div class="candle candle1">
+          <div class="flame">🔥</div>
+        </div>
+
+        <div class="candle candle2">
+          <div class="flame">🔥</div>
+        </div>
+
+        <div class="cake-top"></div>
+        <div class="cake-middle"></div>
+        <div class="cake-bottom"></div>
+
+      </div>
+
+      <button class="wish-btn" onclick="makeWish()">
+        MAKE A WISH ✨
+      </button>
+
+      <div id="wish"></div>
+
+    </div>
+
+
+    <!-- GIFT -->
+    <div class="section">
+
+      <div class="small">
+        A LITTLE GIFT FROM MAMA 🎁
+      </div>
+
+      <h3 class="section-title">
+        Something Special For Bhavya 🩷
+      </h3>
+
+      <div class="gift">
+        🎁
+      </div>
+
+      <button class="gift-btn" onclick="openGift()">
+        OPEN THE GIFT 🎁
+      </button>
+
+
+      <!-- LETTER -->
+      <div id="letter">
+
+        <div class="letter-icon">
+          💌
+        </div>
+
+        <h3>
+          To My Little Bhavya 🩷
+        </h3>
+
+        <p>
+          Meri pyaari Bhavya, 🎀<br><br>
+
+          Aaj tum 2 saal ki ho gayi ho, aur pata hi nahi chala
+          ki ye do saal itni jaldi kaise nikal gaye. 🥹🩷<br><br>
+
+          Tum mere liye sirf meri bhanji nahi ho.
+          Tum meri chhoti si jaan ho, meri little princess ho,
+          aur meri zindagi ki un chhoti-chhoti khushiyon mein se
+          ek ho jinke bina sab kuch thoda adhura sa lagta hai.
+          🐼🎀<br><br>
+
+          Tumhari smile, tumhari cute si shararatein aur tumhari
+          chhoti-chhoti baatein hamesha mere chehre par smile
+          le aati hain. ❤️<br><br>
+
+          Main bas itna chahta hoon ki tum hamesha khush raho,
+          hamesha smile karti raho aur life mein jitna chaaho
+          utna aage badho.<br><br>
+
+          <b>
+            Tum kitni bhi badi ho jao, mere liye tum hamesha
+            meri wahi chhoti si Bhavya rahogi. 🥹🩷
+          </b><br><br>
+
+          Happy 2nd Birthday meri chhoti si princess! 🎂🎀<br><br>
+
+          I love you so, so much. ❤️
+        </p>
+
+        <div class="signature">
+          Lots of love,<br>
+          <b>— Gaurav Jamdagni ❤️</b>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+      Made with lots of love for Bhavya 🩷<br>
+      🎀 15 • 08 • 2026 🎀
+    </footer>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
