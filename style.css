@@ -1,0 +1,497 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffddea;
+  color: #704357;
+  overflow-x: hidden;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font: 700 16px Arial;
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
+/* HOME */
+
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+.home {
+  position: relative;
+  z-index: 2;
+}
+
+.small {
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: .7;
+  margin-bottom: 15px;
+}
+
+h1 {
+  color: #d65380;
+  font-size: clamp(48px, 13vw, 78px);
+  line-height: .95;
+}
+
+.name {
+  display: block;
+  font-size: .55em;
+  margin-top: 12px;
+}
+
+.subtitle {
+  margin: 22px 0 30px;
+  font-size: 17px;
+}
+
+.main-btn,
+.gift-btn,
+.wish-btn {
+  padding: 16px 28px;
+  border-radius: 50px;
+}
+
+.main-btn {
+  background: white;
+  color: #d65380;
+  box-shadow: 0 10px 30px #a046692e;
+}
+
+/* DECORATIONS */
+
+.decor {
+  position: absolute;
+  font-size: 30px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.d1 {
+  top: 12%;
+  left: 10%;
+}
+
+.d2 {
+  top: 20%;
+  right: 10%;
+}
+
+.d3 {
+  bottom: 18%;
+  left: 13%;
+}
+
+.d4 {
+  bottom: 12%;
+  right: 13%;
+}
+
+.d5 {
+  top: 48%;
+  left: 5%;
+}
+
+.d6 {
+  top: 50%;
+  right: 5%;
+}
+
+
+/* JOURNEY */
+
+#journey,
+#countdown {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: #ffddea;
+  text-align: center;
+}
+
+.journey-title {
+  margin-top: 18vh;
+  color: #c64e77;
+  font-size: 21px;
+}
+
+.path {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 30%;
+  height: 5px;
+  background: white;
+  border-radius: 10px;
+}
+
+.panda {
+  position: absolute;
+  left: -100px;
+  bottom: calc(30% - 35px);
+  font-size: 72px;
+  animation: walk 4s linear forwards;
+}
+
+.journey-text {
+  position: absolute;
+  bottom: 17%;
+  width: 100%;
+  opacity: .7;
+}
+
+
+/* COUNTDOWN */
+
+#countdown {
+  z-index: 20;
+  background: linear-gradient(145deg, #ffe9f1, #ffd1e2);
+}
+
+.count-box {
+  width: min(440px, 100%);
+}
+
+.count-panda,
+.hero-panda {
+  font-size: 70px;
+  animation: bounce 1.5s infinite;
+}
+
+.count-box h2 {
+  color: #d0527d;
+  margin: 15px 0 10px;
+  font-size: 28px;
+}
+
+.count-box p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin: 25px 0;
+}
+
+.time {
+  background: white;
+  border-radius: 17px;
+  padding: 14px 3px;
+}
+
+.number {
+  display: block;
+  color: #c64e77;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 9px;
+  opacity: .6;
+}
+
+
+/* WEBSITE */
+
+#site {
+  display: none;
+  background: #fff0f6;
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h2 {
+  color: #d0527d;
+  font-size: clamp(42px, 12vw, 72px);
+  line-height: 1;
+  margin: 20px 0;
+}
+
+.hero h2 span {
+  color: #b93f6c;
+}
+
+.hero p {
+  max-width: 480px;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.badge {
+  margin-top: 25px;
+  background: white;
+  color: #c64e77;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+
+/* SECTIONS */
+
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.card {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px #a0466920;
+}
+
+.card h3,
+.section-title {
+  color: #d0527d;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.card p,
+#letter p {
+  line-height: 1.9;
+}
+
+
+/* PHOTOS */
+
+.photos {
+  max-width: 900px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.photo {
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.photo img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.photo p {
+  padding: 12px 5px 5px;
+}
+
+
+/* CAKE */
+
+.cake {
+  width: 190px;
+  height: 150px;
+  margin: 45px auto 25px;
+  position: relative;
+}
+
+.cake div {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+}
+
+.cake-bottom {
+  width: 190px;
+  height: 60px;
+  bottom: 0;
+  background: #e889a8;
+}
+
+.cake-middle {
+  width: 155px;
+  height: 50px;
+  bottom: 50px;
+  background: #f3abc0;
+}
+
+.cake-top {
+  width: 125px;
+  height: 42px;
+  bottom: 92px;
+  background: #ffd0df;
+}
+
+.candle {
+  bottom: 132px !important;
+  width: 11px !important;
+  height: 35px !important;
+  background: white;
+  z-index: 2;
+}
+
+.candle1 {
+  left: 75px !important;
+}
+
+.candle2 {
+  left: 105px !important;
+}
+
+.flame {
+  top: -23px;
+  left: -5px !important;
+  transform: none !important;
+}
+
+.wish-btn,
+.gift-btn {
+  background: #d0527d;
+  color: white;
+}
+
+#wish {
+  margin-top: 15px;
+  color: #c64e77;
+}
+
+
+/* GIFT */
+
+.gift {
+  font-size: 100px;
+  margin: 25px 0;
+  animation: bounce 2s infinite;
+}
+
+#letter {
+  display: none;
+  max-width: 620px;
+  margin: 35px auto 0;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 30px;
+  text-align: left;
+  box-shadow: 0 20px 50px #a0466926;
+  animation: reveal .7s;
+}
+
+.letter-icon {
+  text-align: center;
+  font-size: 60px;
+}
+
+#letter h3 {
+  text-align: center;
+  color: #d0527d;
+  font-size: 28px;
+  margin: 15px 0 25px;
+}
+
+.signature {
+  margin-top: 25px;
+  text-align: right;
+  color: #c64e77;
+  line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+footer {
+  padding: 35px 20px;
+  background: #ffd7e5;
+  text-align: center;
+  line-height: 1.8;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-17px);
+  }
+}
+
+@keyframes walk {
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: calc(100% - 90px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .photos {
+    grid-template-columns: 1fr;
+    max-width: 330px;
+  }
+
+  .photo img {
+    height: 300px;
+  }
+
+}
